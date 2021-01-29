@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -37,17 +39,29 @@ android {
 
 dependencies {
 
+    //KOTLIN
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+
+    //CORE
     implementation "androidx.core:core-ktx:${versions.kotlinx}"
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
-    implementation "com.google.android.material:material:${versions.material}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
-    implementation "com.airbnb.android:lottie:${versions.lottie}"
-    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    implementation "com.google.android.material:material:${versions.material}"
+
+    //LIFECYCLE
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
 
+    //FIREBASE
+    implementation platform("com.google.firebase:firebase-bom:${versions.firebase}")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
+    //THIRD_PARTY
+    implementation "com.airbnb.android:lottie:${versions.lottie}"
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+
+    //TEST
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.junitext}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
