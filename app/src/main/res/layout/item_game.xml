@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/regular_parent_margin"
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/regular_card_border_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivItemGameThumbnail"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/game_card_thumbnail_width"
+            android:contentDescription="@string/description_game_thumbnail"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tvItemGameTitle"
+            style="@style/CardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/game_card_margin_content"
+            app:layout_constraintEnd_toEndOf="@id/ivItemGameThumbnail"
+            app:layout_constraintStart_toStartOf="@id/ivItemGameThumbnail"
+            app:layout_constraintTop_toBottomOf="@id/ivItemGameThumbnail"
+            tools:text="Game Title" />
+
+        <TextView
+            android:id="@+id/tvItemGameYear"
+            style="@style/DefaultText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_card_margin_content"
+            android:layout_marginBottom="@dimen/game_card_margin_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tvItemGameTitle"
+            app:layout_constraintStart_toStartOf="@id/tvItemGameTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvItemGameTitle"
+            tools:text="2021" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

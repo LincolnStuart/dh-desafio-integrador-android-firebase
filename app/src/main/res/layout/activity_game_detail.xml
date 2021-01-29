@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".view.activity.GameDetailActivity">
+
+
+    <ImageView
+        android:id="@+id/ivGameDetailThumbnail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/thumbnail_game_description"
+        android:contentDescription="@string/description_game_thumbnail"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/ivGameDetailBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/regular_parent_margin"
+        android:contentDescription="@string/back_button"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabGameDetailEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fab_edit_game_detail_margin_top"
+        android:layout_marginEnd="@dimen/regular_parent_margin"
+        android:contentDescription="@string/edit_button"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/ivGameDetailThumbnail"
+        app:layout_constraintStart_toStartOf="@id/ivGameDetailThumbnail"
+        app:layout_constraintTop_toBottomOf="@id/ivGameDetailThumbnail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvGameDetailTitle"
+                style="@style/DefaultTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/regular_parent_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Game Title" />
+
+            <TextView
+                android:id="@+id/tvGameDetailReleaseDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/release_date"
+                app:layout_constraintStart_toStartOf="@id/tvGameDetailTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvGameDetailTitle" />
+
+            <TextView
+                android:id="@+id/tvGameDetailReleaseDateValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/regular_parent_margin"
+                android:layout_marginEnd="@dimen/regular_parent_margin"
+                app:layout_constraintEnd_toEndOf="@id/tvGameDetailTitle"
+                app:layout_constraintStart_toEndOf="@id/tvGameDetailReleaseDateLabel"
+                app:layout_constraintTop_toTopOf="@id/tvGameDetailReleaseDateLabel"
+                tools:text="2019" />
+
+            <TextView
+                android:id="@+id/tvGameDetailDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_parent_margin"
+                app:layout_constraintEnd_toEndOf="@id/tvGameDetailReleaseDateValue"
+                app:layout_constraintStart_toStartOf="@id/tvGameDetailReleaseDateLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvGameDetailReleaseDateLabel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="Game description Game description Game description Game description Game description Game description Game description Game description Game description Game description Game description Game description Game description ..." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

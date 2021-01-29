@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="regular_parent_margin">16dp</dimen>
+    <dimen name="game_card_thumbnail_width">100dp</dimen>
+    <dimen name="regular_card_border_radius">8dp</dimen>
+    <dimen name="game_card_margin_content">8dp</dimen>
+    <dimen name="game_card_title_size">24sp</dimen>
+    <dimen name="game_card_year_size">20sp</dimen>
+    <dimen name="search_bar_padding">8dp</dimen>
+    <dimen name="login_content_margin">16dp</dimen>
+    <dimen name="login_card_margin_large">32dp</dimen>
+    <dimen name="login_checkbox_margin">4dp</dimen>
+    <dimen name="animation_size">72dp</dimen>
+    <dimen name="thumbnail_game_description">200dp</dimen>
+    <dimen name="fab_edit_game_detail_margin_top">175dp</dimen>
+</resources>

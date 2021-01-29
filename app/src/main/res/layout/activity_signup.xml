@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.SignupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/regular_parent_margin"
+            app:cardCornerRadius="@dimen/regular_card_border_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilRegistrationName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/login_card_margin_large"
+                    android:layout_marginBottom="@dimen/login_content_margin"
+                    android:layout_marginEnd="@dimen/login_content_margin"
+                    android:layout_marginStart="@dimen/login_content_margin"
+                    android:hint="@string/name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilRegistrationEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/login_content_margin"
+                    android:hint="@string/e_mail"
+                    app:layout_constraintEnd_toEndOf="@id/tilRegistrationName"
+                    app:layout_constraintStart_toStartOf="@id/tilRegistrationName"
+                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationName">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilRegistrationPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/login_content_margin"
+                    android:hint="@string/password"
+                    app:layout_constraintEnd_toEndOf="@id/tilRegistrationEmail"
+                    app:layout_constraintStart_toStartOf="@id/tilRegistrationEmail"
+                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationEmail">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilRegistrationPasswordConfirmation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/login_content_margin"
+                    android:hint="@string/password_confirmation"
+                    app:layout_constraintEnd_toEndOf="@id/tilRegistrationPassword"
+                    app:layout_constraintStart_toStartOf="@id/tilRegistrationPassword"
+                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationPassword">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btRegistrationSubmit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/login_content_margin"
+                    android:layout_marginBottom="@dimen/login_card_margin_large"
+                    android:text="@string/create_account"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tilRegistrationPasswordConfirmation"
+                    app:layout_constraintStart_toStartOf="@id/tilRegistrationPasswordConfirmation"
+                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationPasswordConfirmation" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

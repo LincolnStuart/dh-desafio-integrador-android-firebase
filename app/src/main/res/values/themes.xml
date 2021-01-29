@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.DesafioIntegradorFirebaseBase" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green_500</item>
+        <item name="colorPrimaryVariant">@color/green_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/green_200</item>
+        <item name="colorSecondaryVariant">@color/green_500</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.DesafioIntegradorFirebase" parent="Theme.DesafioIntegradorFirebaseBase">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/grey</item>
+    </style>
+
+    <style name="Theme.DesafioIntegradorFirebaseAuthorization" parent="Theme.DesafioIntegradorFirebase">
+        <item name="android:windowBackground">@drawable/bg_green</item>
+    </style>
+
+    <style name="DefaultTitle">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/game_card_title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CardTitle" parent="DefaultTitle">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="DefaultText">
+        <item name="android:textSize">@dimen/game_card_year_size</item>
+    </style>
+
+</resources>

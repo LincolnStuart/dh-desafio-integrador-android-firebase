@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Desafio Integrador Firebase</string>
+    <string name="description_game_thumbnail">game thumbnail</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember</string>
+    <string name="log_in">Log in</string>
+    <string name="create_account">Create account</string>
+    <string name="add_game">Add game</string>
+    <string name="name">Name</string>
+    <string name="password_confirmation">Confirm password</string>
+    <string name="back_button">Back button</string>
+    <string name="edit_button">Edit button</string>
+    <string name="release_date">Release date:</string>
+</resources>
