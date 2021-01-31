@@ -3,15 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:fillViewport="true"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".view.activity.SignupActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/tvRegistrationLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/regular_parent_margin"
+            android:text="@string/plase_wait"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/cvRegistrationCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvRegistrationCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/regular_parent_margin"
@@ -29,10 +42,10 @@
                     android:id="@+id/tilRegistrationName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/login_card_margin_large"
-                    android:layout_marginBottom="@dimen/login_content_margin"
-                    android:layout_marginEnd="@dimen/login_content_margin"
                     android:layout_marginStart="@dimen/login_content_margin"
+                    android:layout_marginTop="@dimen/login_card_margin_large"
+                    android:layout_marginEnd="@dimen/login_content_margin"
+                    android:layout_marginBottom="@dimen/login_content_margin"
                     android:hint="@string/name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +84,8 @@
                     android:hint="@string/password"
                     app:layout_constraintEnd_toEndOf="@id/tilRegistrationEmail"
                     app:layout_constraintStart_toStartOf="@id/tilRegistrationEmail"
-                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationEmail">
+                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationEmail"
+                    app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -88,7 +102,8 @@
                     android:hint="@string/password_confirmation"
                     app:layout_constraintEnd_toEndOf="@id/tilRegistrationPassword"
                     app:layout_constraintStart_toStartOf="@id/tilRegistrationPassword"
-                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationPassword">
+                    app:layout_constraintTop_toBottomOf="@id/tilRegistrationPassword"
+                    app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"

@@ -8,8 +8,7 @@ class AnalyticsBusiness {
         AnalyticsRepository()
     }
 
-    suspend fun logEvent(name: String, bundle: Bundle?) {
+    fun logEvent(name: String, bundle: Bundle?) =
         repo.logEvent(name, bundle)
-    }
 
 }

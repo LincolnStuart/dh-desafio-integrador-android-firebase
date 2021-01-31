@@ -12,9 +12,7 @@ class AnalyticsRepository {
         Firebase.analytics
     }
 
+    fun logEvent(name: String, bundle: Bundle?) =
+        analytics.logEvent(name, bundle)
 
-    suspend fun logEvent(name: String, bundle: Bundle?) =
-        withContext(Dispatchers.IO) {
-            analytics.logEvent(name, bundle)
-        }
 }

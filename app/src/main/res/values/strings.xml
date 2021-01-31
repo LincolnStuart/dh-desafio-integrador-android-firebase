@@ -12,4 +12,12 @@
     <string name="back_button">Back button</string>
     <string name="edit_button">Edit button</string>
     <string name="release_date">Release date:</string>
+    <!-- VALIDATION MESSAGES -->
+    <string name="invalid_email">E-mail invalid (pattern doesn\'t match)</string>
+    <string name="invalid_password_minimum">Password invalid (value is too short)</string>
+    <string name="invalid_password_confirmation">Password invalid (confirmation is different)</string>
+    <string name="invalid_name_minimum">Name invalid (value is too short)</string>
+    <string name="my_game_list">my game list</string>
+    <string name="created_by">created by Lincoln</string>
+    <string name="plase_wait">Plase wait...</string>
 </resources>

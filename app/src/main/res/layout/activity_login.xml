@@ -65,7 +65,8 @@
                     android:hint="@string/password"
                     app:layout_constraintEnd_toEndOf="@id/tilLoginEmail"
                     app:layout_constraintStart_toStartOf="@id/tilLoginEmail"
-                    app:layout_constraintTop_toBottomOf="@id/tilLoginEmail">
+                    app:layout_constraintTop_toBottomOf="@id/tilLoginEmail"
+                    app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -94,6 +95,16 @@
                     app:layout_constraintEnd_toEndOf="@id/cbLoginRemember"
                     app:layout_constraintStart_toStartOf="@id/cbLoginRemember"
                     app:layout_constraintTop_toBottomOf="@id/cbLoginRemember" />
+
+                <ProgressBar
+                    android:id="@+id/pbLoginLoader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/lavLoginAnimation"
+                    app:layout_constraintEnd_toEndOf="@id/lavLoginAnimation"
+                    app:layout_constraintStart_toStartOf="@id/lavLoginAnimation"
+                    app:layout_constraintTop_toTopOf="@id/lavLoginAnimation" />
 
                 <TextView
                     android:id="@+id/tvLoginCreateAccount"

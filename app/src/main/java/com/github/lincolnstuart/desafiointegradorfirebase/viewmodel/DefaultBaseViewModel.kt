@@ -6,16 +6,14 @@ import androidx.lifecycle.viewModelScope
 import com.github.lincolnstuart.desafiointegradorfirebase.model.analytics.AnalyticsBusiness
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel : ViewModel() {
+abstract class DefaultBaseViewModel : ViewModel() {
 
     private val analyticsBusiness: AnalyticsBusiness by lazy{
         AnalyticsBusiness()
     }
 
     fun logEventOnAnalytics(name: String, bundle: Bundle? = null){
-        viewModelScope.launch {
-            analyticsBusiness.logEvent(name, bundle)
-        }
+        analyticsBusiness.logEvent(name, bundle)
     }
 
 }
