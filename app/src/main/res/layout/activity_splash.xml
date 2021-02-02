@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/my_game_list"
         android:textColor="@color/white"
+        android:fontFamily="monospace"
         android:textSize="42sp"
         android:textStyle="bold"
         app:layout_constraintVertical_bias="0.4"

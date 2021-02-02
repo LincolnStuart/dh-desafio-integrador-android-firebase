@@ -1,14 +1,10 @@
 package com.github.lincolnstuart.desafiointegradorfirebase.model.auth
 
-import com.google.android.gms.tasks.Task
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.DEFAULT_FAILURE_MESSAGE
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 class AuthenticationRepository {
 
@@ -24,14 +20,14 @@ class AuthenticationRepository {
         onFailure: (String) -> Unit
     ) {
         getUser()?.let {
-            onFailure("$it :/")
+            onFailure("$it $DEFAULT_FAILURE_MESSAGE")
         }.run {
             auth.signInWithEmailAndPassword(login.email, login.password)
                 .addOnSuccessListener {
                     onSuccess(it)
                 }
                 .addOnFailureListener {
-                    onFailure(it.localizedMessage?.toString() ?: ":/")
+                    onFailure(it.localizedMessage?.toString() ?: DEFAULT_FAILURE_MESSAGE)
                 }
         }
     }
@@ -42,7 +38,7 @@ class AuthenticationRepository {
         onFailure: (String) -> Unit
     ) {
         getUser()?.let {
-            onFailure("$it :/")
+            onFailure("$it $DEFAULT_FAILURE_MESSAGE")
         }.run {
             auth.createUserWithEmailAndPassword(signup.email, signup.password)
                 .addOnSuccessListener {
@@ -50,7 +46,7 @@ class AuthenticationRepository {
                     //val changes = userProfileChangeRequest { displayName = name }
                     //it.user?.updateProfile(changes)
                 }.addOnFailureListener {
-                    onFailure(it.localizedMessage?.toString() ?: ":/")
+                    onFailure(it.localizedMessage?.toString() ?: DEFAULT_FAILURE_MESSAGE)
                 }
         }
     }

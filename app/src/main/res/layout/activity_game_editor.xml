@@ -12,7 +12,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabGameEditorPickImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/select_picture"
+            android:src="@drawable/ic_pic"
+            app:layout_constraintBottom_toTopOf="@id/cvGamerEditorForm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cvGamerEditorForm" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civGameEditorThumbnail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/fabGameEditorPickImage"
+            app:layout_constraintEnd_toEndOf="@id/fabGameEditorPickImage"
+            app:layout_constraintStart_toStartOf="@id/fabGameEditorPickImage"
+            app:layout_constraintTop_toTopOf="@id/fabGameEditorPickImage" />
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvGamerEditorForm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/regular_parent_margin"
@@ -29,7 +54,10 @@
                     android:id="@+id/tilGameEditorName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/regular_parent_margin"
+                    android:layout_marginStart="@dimen/regular_parent_margin"
+                    android:layout_marginTop="@dimen/game_editor_card_padding_large"
+                    android:layout_marginEnd="@dimen/regular_parent_margin"
+                    android:layout_marginBottom="@dimen/regular_parent_margin"
                     android:hint="@string/name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/regular_parent_margin"
-                    android:hint="@string/release_date"
+                    android:hint="@string/created_at"
                     app:layout_constraintEnd_toEndOf="@id/tilGameEditorName"
                     app:layout_constraintStart_toStartOf="@id/tilGameEditorName"
                     app:layout_constraintTop_toBottomOf="@id/tilGameEditorName">

@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.ViewModelProvider
 import com.github.lincolnstuart.desafiointegradorfirebase.databinding.ActivitySplashBinding
-import com.github.lincolnstuart.desafiointegradorfirebase.util.extension.Constants.SPLASH_TIMEOUT
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.SPLASH_TIMEOUT
 import com.github.lincolnstuart.desafiointegradorfirebase.viewmodel.SplashViewModel
 
 class SplashActivity : AppCompatActivity() {

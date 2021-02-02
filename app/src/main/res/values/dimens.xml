@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="regular_parent_margin">16dp</dimen>
-    <dimen name="game_card_thumbnail_width">100dp</dimen>
+    <dimen name="game_card_thumbnail_width">60dp</dimen>
     <dimen name="regular_card_border_radius">8dp</dimen>
     <dimen name="game_card_margin_content">8dp</dimen>
-    <dimen name="game_card_title_size">24sp</dimen>
-    <dimen name="game_card_year_size">20sp</dimen>
+    <dimen name="game_card_title_size">16sp</dimen>
+    <dimen name="game_card_year_size">12sp</dimen>
     <dimen name="search_bar_padding">8dp</dimen>
     <dimen name="login_content_margin">16dp</dimen>
     <dimen name="login_card_margin_large">32dp</dimen>
@@ -14,4 +14,5 @@
     <dimen name="thumbnail_game_description">200dp</dimen>
     <dimen name="fab_edit_game_detail_margin_top">175dp</dimen>
     <dimen name="description_text_view_height">150dp</dimen>
+    <dimen name="game_editor_card_padding_large">42dp</dimen>
 </resources>

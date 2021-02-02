@@ -1,7 +1,7 @@
 package com.github.lincolnstuart.desafiointegradorfirebase.model.auth
 
 import android.util.Patterns
-import com.github.lincolnstuart.desafiointegradorfirebase.util.extension.Constants
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants
 import com.google.firebase.auth.AuthResult
 
 class AuthenticationBusiness {

@@ -6,7 +6,7 @@ import com.github.lincolnstuart.desafiointegradorfirebase.model.game.Game
 import com.github.lincolnstuart.desafiointegradorfirebase.model.game.GameBusiness
 import com.google.firebase.firestore.DocumentReference
 
-class GameEditorViewModel : ViewModel() {
+class GameEditorViewModel : DefaultBaseViewModel() {
 
     private val business: GameBusiness by lazy {
         GameBusiness()

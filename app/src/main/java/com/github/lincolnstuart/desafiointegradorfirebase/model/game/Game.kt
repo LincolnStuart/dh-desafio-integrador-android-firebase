@@ -1,18 +1,24 @@
 package com.github.lincolnstuart.desafiointegradorfirebase.model.game
 
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.GAME_FIELD_CREATED_AT
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.GAME_FIELD_DESCRIPTION
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.GAME_FIELD_NAME
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.GAME_FIELD_OWNER
+
 data class Game(
     val name: String,
     val createdAt: String,
     val description: String,
+    var ownerUid: String? = null,
+    var uid: String? = null
 ) {
-    var ownerUid: String? = null
 
     fun toHashMap(): HashMap<String, Any?> {
         return hashMapOf(
-            "name" to name,
-            "created_at" to createdAt,
-            "description" to description,
-            "owner" to ownerUid
+            GAME_FIELD_NAME to name,
+            GAME_FIELD_CREATED_AT to createdAt,
+            GAME_FIELD_DESCRIPTION to description,
+            GAME_FIELD_OWNER to ownerUid
         )
     }
 }
