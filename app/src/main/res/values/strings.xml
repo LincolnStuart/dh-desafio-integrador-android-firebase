@@ -20,4 +20,6 @@
     <string name="my_game_list">my game list</string>
     <string name="created_by">created by Lincoln</string>
     <string name="plase_wait">Plase wait...</string>
+    <string name="submit">Submit</string>
+    <string name="description">Description</string>
 </resources>

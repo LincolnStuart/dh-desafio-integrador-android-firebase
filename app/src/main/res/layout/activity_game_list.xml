@@ -30,6 +30,7 @@
         tools:spanCount="2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabGameListAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/regular_parent_margin"

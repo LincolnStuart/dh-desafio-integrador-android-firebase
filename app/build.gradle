@@ -57,6 +57,7 @@ dependencies {
     implementation "com.google.firebase:firebase-crashlytics-ktx"
     implementation "com.google.firebase:firebase-analytics-ktx"
     implementation "com.google.firebase:firebase-auth-ktx"
+    implementation "com.google.firebase:firebase-firestore-ktx"
 
     //THIRD_PARTY
     implementation "com.airbnb.android:lottie:${versions.lottie}"

@@ -1,5 +1,6 @@
 package com.github.lincolnstuart.desafiointegradorfirebase.view.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -21,5 +22,8 @@ class GameListActivity : AppCompatActivity() {
     private fun initComponents() {
         viewmodel = ViewModelProvider(this).get(GameListViewModel::class.java)
         viewmodel.logEventOnAnalytics(this.localClassName)
+        binding.fabGameListAdd.setOnClickListener {
+            startActivity(Intent(this, GameEditorActivity::class.java))
+        }
     }
 }
