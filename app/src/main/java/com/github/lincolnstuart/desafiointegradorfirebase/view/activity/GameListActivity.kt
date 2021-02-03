@@ -39,10 +39,18 @@ class GameListActivity : AppCompatActivity() {
         }
         binding.rvGameListGames.apply {
             layoutManager = GridLayoutManager(this@GameListActivity, 2)
-            adapter = GameListAdapter(games){
+            adapter = GameListAdapter(games, {
                 viewmodel.getThumbnailReference(it)
-            }
+            }, {
+                goToGameDetail(it)
+            })
         }
+    }
+
+    private fun goToGameDetail(it: Game) {
+        val intent = Intent(this@GameListActivity, GameDetailActivity::class.java)
+        intent.putExtra(GAME_KEY, it)
+        startActivity(intent)
     }
 
     private fun setupObservers() {
@@ -67,4 +75,8 @@ class GameListActivity : AppCompatActivity() {
             document.data?.get(GAME_FIELD_OWNER).toString(),
             document.id
         )
+
+    companion object{
+        const val GAME_KEY = "game"
+    }
 }
