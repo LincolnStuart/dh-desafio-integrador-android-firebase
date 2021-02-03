@@ -17,6 +17,8 @@
     <string name="invalid_password_minimum">Password invalid (value is too short)</string>
     <string name="invalid_password_confirmation">Password invalid (confirmation is different)</string>
     <string name="invalid_name_minimum">Name invalid (value is too short)</string>
+    <string name="invalid_release_date_minimum">Release date invalid (value is too short)</string>
+    <string name="invalid_description_minimum">Description invalid (value is too short)</string>
     <string name="my_game_list">my_game[]</string>
     <string name="created_by">created by Lincoln</string>
     <string name="plase_wait">Please wait...</string>

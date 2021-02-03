@@ -13,17 +13,17 @@ abstract class AuthenticationBaseViewModel: DefaultBaseViewModel() {
         AuthenticationBusiness()
     }
 
-    fun validatePassword(message: String) =
-        authenticationBusiness.validatePassword(message)
+    fun validatePassword(value: String) =
+        authenticationBusiness.validatePassword(value)
 
-    fun validateEmail(message: String) =
-        authenticationBusiness.validateEmail(message)
+    fun validateEmail(value: String) =
+        authenticationBusiness.validateEmail(value)
 
-    fun validateName(message: String) =
-        authenticationBusiness.validateName(message)
+    fun validateName(value: String) =
+        authenticationBusiness.validateName(value)
 
-    fun validatePasswordConfirmation(message: String, passwordConfirmation: String) =
-        authenticationBusiness.validateConfirmationPassword(message, passwordConfirmation)
+    fun validatePasswordConfirmation(value: String, passwordConfirmation: String) =
+        authenticationBusiness.validateConfirmationPassword(value, passwordConfirmation)
 
 
 }

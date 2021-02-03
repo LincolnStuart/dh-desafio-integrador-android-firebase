@@ -2,7 +2,6 @@ package com.github.lincolnstuart.desafiointegradorfirebase.viewmodel
 
 import android.net.Uri
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.github.lincolnstuart.desafiointegradorfirebase.model.game.Game
 import com.github.lincolnstuart.desafiointegradorfirebase.model.game.GameBusiness
 import com.google.firebase.firestore.DocumentReference
@@ -29,4 +28,16 @@ class GameEditorViewModel : DefaultBaseViewModel() {
             },
             { message: String -> errorMessageLiveData.postValue(message) })
     }
+
+
+    fun validateName(value: String) =
+        business.validateName(value)
+
+    fun validateReleaseDate(value: String) =
+        business.validateReleaseDate(value)
+
+    fun validateDescription(value: String) =
+        business.validateDescription(value)
+
+
 }
