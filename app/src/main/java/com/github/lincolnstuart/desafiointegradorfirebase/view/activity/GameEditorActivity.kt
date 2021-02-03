@@ -1,27 +1,25 @@
 package com.github.lincolnstuart.desafiointegradorfirebase.view.activity
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.github.lincolnstuart.desafiointegradorfirebase.databinding.ActivityGameEditorBinding
 import com.github.lincolnstuart.desafiointegradorfirebase.model.game.Game
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.DEFAULT_FAILURE_MESSAGE
+import com.github.lincolnstuart.desafiointegradorfirebase.util.Constants.DEFAULT_SUCCESS_MESSAGE
 import com.github.lincolnstuart.desafiointegradorfirebase.util.GlideApp
-import com.github.lincolnstuart.desafiointegradorfirebase.util.MyGameListGlideModule
 import com.github.lincolnstuart.desafiointegradorfirebase.viewmodel.GameEditorViewModel
 
 class GameEditorActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameEditorBinding
     private lateinit var viewmodel: GameEditorViewModel
-    private var imageUri: Uri? = null
+    private var thumbnail: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +32,12 @@ class GameEditorActivity : AppCompatActivity() {
         viewmodel = ViewModelProvider(this).get(GameEditorViewModel::class.java)
         setupObservers()
         binding.btGameEditorSubmit.setOnClickListener {
-            viewmodel.addGame(
-                getGame()
-            )
+
+            thumbnail?.let {
+                viewmodel.addGame(
+                    getGame(), it
+                )
+            }
         }
         binding.fabGameEditorPickImage.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
@@ -52,22 +53,23 @@ class GameEditorActivity : AppCompatActivity() {
 
     private fun setupObservers() {
         viewmodel.documentReferenceLiveData.observe(this) {
-            Log.i("OBSERVER", "DOCUMENTREFFERENT:${it.id} ")
+            Toast.makeText(this@GameEditorActivity, DEFAULT_SUCCESS_MESSAGE, Toast.LENGTH_SHORT).show()
+            finish()
         }
         viewmodel.errorMessageLiveData.observe(this) {
-            Log.i("OBSERVER", "Error: $it ")
+            Toast.makeText(this@GameEditorActivity, DEFAULT_FAILURE_MESSAGE, Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && requestCode == KEY_PICK_IMAGE) {
-            imageUri = data?.data
+            thumbnail = data?.data
             binding.civGameEditorThumbnail.visibility = View.VISIBLE
             GlideApp
                 .with(this@GameEditorActivity)
                 .asBitmap()
-                .load(imageUri)
+                .load(thumbnail)
                 .dontAnimate()
                 .into(binding.civGameEditorThumbnail)
         }

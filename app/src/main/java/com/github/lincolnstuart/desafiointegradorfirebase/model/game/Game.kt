@@ -21,4 +21,5 @@ data class Game(
             GAME_FIELD_OWNER to ownerUid
         )
     }
+
 }

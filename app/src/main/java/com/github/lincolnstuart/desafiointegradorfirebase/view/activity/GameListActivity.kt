@@ -39,7 +39,9 @@ class GameListActivity : AppCompatActivity() {
         }
         binding.rvGameListGames.apply {
             layoutManager = GridLayoutManager(this@GameListActivity, 2)
-            adapter = GameListAdapter(games)
+            adapter = GameListAdapter(games){
+                viewmodel.getThumbnailReference(it)
+            }
         }
     }
 

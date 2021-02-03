@@ -1,5 +1,6 @@
 package com.github.lincolnstuart.desafiointegradorfirebase.viewmodel
 
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.github.lincolnstuart.desafiointegradorfirebase.model.game.Game
@@ -18,9 +19,11 @@ class GameEditorViewModel : DefaultBaseViewModel() {
         MutableLiveData()
     }
 
-    fun addGame(game: Game) {
+    fun addGame(game: Game, thumbnail: Uri) {
         business.add(
-            game, { documentReference: DocumentReference ->
+            game,
+            thumbnail,
+            { documentReference: DocumentReference ->
                 documentReferenceLiveData
                     .postValue(documentReference)
             },
